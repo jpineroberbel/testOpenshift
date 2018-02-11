@@ -52,6 +52,7 @@ app.post('/upload', (req, rest) => {
 
     form.on('fileBegin', function (name, file){
         file.path = __dirname + '/public/uploads/' + file.name;
+        console.log("----------->"+file.path);
     });
 
     form.on('file', function (name, file){
