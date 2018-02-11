@@ -57,9 +57,11 @@ console.log("1");
 
     form.on('file', function (name, file){
         console.log('Uploaded ' + file.name);
+        return rest.redirect('/');
+
     }); 
 
-    return rest.redirect('/');
+    //return rest.redirect('/');
 
    // rest.sendFile(__dirname + '/public/subeArchivo.html');
 })
