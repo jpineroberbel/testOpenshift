@@ -4,7 +4,7 @@ var formidable = require('formidable');
 //var fs = require('fs');
 
 let app = express();
-
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
@@ -23,7 +23,7 @@ app.use(function (req, res, next) {
     // Pass to next layer of middleware
     next();
 });
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 let http = require('http');
 let server = http.Server(app);
