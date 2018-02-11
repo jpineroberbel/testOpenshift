@@ -58,7 +58,9 @@ app.post('/upload', (req, rest) => {
         console.log('Uploaded ' + file.name);
     }); 
 
-    rest.sendFile(__dirname + '/public/subeArchivo.html');
+    return rest.redirect('/');
+
+   // rest.sendFile(__dirname + '/public/subeArchivo.html');
 })
 
 
