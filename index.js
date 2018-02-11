@@ -45,7 +45,7 @@ io.on('connection', (socket) => {
 
 // Gestion de subida de ficheros
 app.post('/upload', (req, rest) => {
-
+console.log("POST");
     var form = new formidable.IncomingForm(); 
 
      form.parse(req);
