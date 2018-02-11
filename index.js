@@ -51,7 +51,7 @@ console.log("1");
      form.parse(req);
      console.log("3");
     form.on('fileBegin', function (name, file){
-        file.path = __dirname + '/public/uploads/' + file.name;
+        file.path =path.join( __dirname,'/public/uploads/', file.name);
         console.log("----------->"+file.path);
     });
 
