@@ -45,11 +45,11 @@ io.on('connection', (socket) => {
 
 // Gestion de subida de ficheros
 app.post('/upload', (req, rest) => {
-console.log("POST");
+console.log("1");
     var form = new formidable.IncomingForm(); 
-
+    console.log("2");
      form.parse(req);
-
+     console.log("3");
     form.on('fileBegin', function (name, file){
         file.path = __dirname + '/public/uploads/' + file.name;
         console.log("----------->"+file.path);
