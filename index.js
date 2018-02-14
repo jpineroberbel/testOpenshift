@@ -1,7 +1,7 @@
 let express = require('express')
 var path = require('path');
 var formidable = require('formidable');
-//var fs = require('fs');
+var fs = require('fs');
 
 let app = express();
 app.use(express.static(path.join(__dirname, 'public')));
@@ -57,7 +57,7 @@ console.log("1");
 
     form.on('file', function (name, file){
         console.log('Uploaded ' + file.name);
-        return rest.redirect('/');
+      //  return rest.redirect('/');
 
     }); 
 
@@ -70,3 +70,8 @@ console.log("1");
 server.listen(port, () => {
     console.log(`started on port: ${port}`);
 });
+
+fs.open('mynewfile2.txt', 'w', function (err, file) {
+    if (err) throw err;
+    console.log('Saved!');
+  });
