@@ -31,7 +31,7 @@ let server = http.Server(app);
 let socketIO = require('socket.io');
 let io = socketIO(server);
 
-const port = process.env.PORT || 3000;
+const port = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000;
 
 io.on('connection', (socket) => {
     console.log('user connected');
