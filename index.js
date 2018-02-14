@@ -71,7 +71,18 @@ server.listen(port, () => {
     console.log(`started on port: ${port}`);
 });
 
-fs.open('mynewfile2.txt', 'w', function (err, file) {
-    if (err) console.log("QUE NOOOOOOOOOOOOOOOOOOOOO "+ err);
-  
-  });
+var path = 'public/uploads/file.txt',
+buffer = new Buffer("some content\n");
+
+fs.open(path, 'w', function(err, fd) {
+    if (err) {
+        throw 'error opening file: ' + err;
+    }
+
+    fs.write(fd, buffer, 0, buffer.length, null, function(err) {
+        if (err) throw 'error writing file: ' + err;
+        fs.close(fd, function() {
+            console.log('file written');
+        })
+    });
+});
