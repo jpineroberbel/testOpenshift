@@ -72,6 +72,6 @@ server.listen(port, () => {
 });
 
 fs.open('mynewfile2.txt', 'w', function (err, file) {
-    if (err) throw err;
-    console.log('Saved!');
+    if (err) console.log("QUE NOOOOOOOOOOOOOOOOOOOOO "+ err);
+  
   });
